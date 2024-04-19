@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/scss/variables';
+@import 'assets/scss/animations';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+
+.d-flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.h100 {
+    max-height: 100vh;
+    min-height: 100vh;
+}
+
+.h100-layout {
+    max-height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+}
+
+.custom-card {
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12) !important;
+    padding: 1em;
+    min-width: 26em;
+    max-width: 40em;
+    margin: 2em;
+}
+
+.custom-btn {
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12) !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.p-4 {
+    padding: 2em;
+}
+
+.pl-2 {
+    padding-left: .8em;
+}
+
+.pr-2 {
+    padding-right: .8em;
+}
+
+.mt-4 {
+    margin-top: 2em;
+}
+
+.border-title {
+    display: flex;
+    width: auto;
+    border-bottom: 5px solid #673ab7;
+    border-radius: 18px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.tooltip-matMenu {
+    &.mat-mdc-menu-panel {
+        background-color: #fff;
+        padding: 0.4em 1.2em !important;
+        border: solid 1px transparent !important;
+        border-radius: 16px !important;
+        min-width: 30% !important;
+        max-width: 100% !important;
+    }
+}

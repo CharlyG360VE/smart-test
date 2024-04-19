@@ -1,0 +1,32 @@
+<section class="h100 d-flex justify-center align-center bc-gray">
+    <mat-card class="custom-card">
+        <mat-card-content>
+            <div class="d-flex justify-center items-center">
+                <h2 class="gray-color">
+                    Iniciar sesión
+                </h2>
+            </div>
+
+            <form [formGroup]="form">
+                <mat-form-field class="w-100" appearance="fill" color="primary">
+                    <mat-label class="fs-14px">Correo</mat-label>
+                    <input  matInput
+                            [formControl]="form.controls.email"
+                            type="text"
+                            autocomplete="off" />
+                </mat-form-field>
+
+                <mat-form-field class="w-100" appearance="fill" color="primary">
+                    <mat-label class="fs-14px">Contraseña</mat-label>
+                    <input  matInput
+                            [formControl]="form.controls.password"
+                            type="password"
+                            autocomplete="off" />
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="justify-center">
+            <button mat-raised-button color="primary" class="custom-btn" [disabled]="form.invalid" (click)="login()">Iniciar</button>
+        </mat-card-actions>
+    </mat-card>
+</section>

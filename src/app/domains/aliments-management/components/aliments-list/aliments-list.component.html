@@ -1,0 +1,51 @@
+<section class="p-4">
+    <div class="d-flex justify-center items-center">
+        <h2 class="gray-color">
+            {{isAdmin ? 'Gestión de productos' : 'Productos'}}
+            <span class="border-title"></span>
+        </h2>
+    </div>
+
+    @if (isAdmin) {
+        <div class="d-flex justify-center items-center mt-4">
+            <button mat-raised-button color="primary" class="custom-btn" (click)="create()">Crear producto</button>
+        </div>
+    }
+
+    <div class="d-flex justify-evenly align-center mt-4 flex-wrap">
+        @for (item of items(); track item.id) {
+            <mat-card class="custom-card">
+                <mat-card-content>
+                    <div class="d-flex justify-center items-center">
+                        <h2 class="gray-color">
+                            {{item.name}}
+                        </h2>
+                    </div>
+        
+                    <p><span><strong>Descripcion: </strong></span>{{item.description}}</p>
+                    <p><span><strong>Precio: </strong></span>{{item.price | currency: '$ ':'symbol-narrow':'.0-0'}}</p>
+                    <p><span><strong>Cantidad: </strong></span>{{getCalculateQuantity(item)}}</p>
+                </mat-card-content>
+                <mat-card-actions class="justify-center">
+                    @if (isAdmin) {
+                        <button mat-icon-button color="primary" class="pr-2" (click)="edit(item.id)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" class="pl-2" (click)="remove(item.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    } @else {
+                        <button mat-icon-button color="primary" class="pr-2" (click)="addToCart(item)">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" class="pl-2" (click)="removeCart(item)">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                    }
+                </mat-card-actions>
+            </mat-card>
+        } @empty {
+            <span>No se encuentran productos disponibles.</span>
+        }
+    </div>
+</section>

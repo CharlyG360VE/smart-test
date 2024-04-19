@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="w-100">
+    <span>Prueba tecnica - Carlos Molero</span>
+    <span class="example-spacer"></span>
+
+    @if (!isAdmin && cart.length > 0) {
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+    }
+
+    <button mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu" class="tooltip-matMenu" xPosition="before" style="background-color: #fff !important;">
+        @for (item of cart; track item.id; let last = $last) {
+            <div>
+                <h4 class="gray-color">
+                    {{item.name}}
+                </h4>
+                <p><span><strong>Cantidad: </strong></span>{{item.quantity}}</p>
+                <p><span><strong>Precio: </strong></span>{{item.price | currency: '$ ':'symbol-narrow':'.0-0'}}</p>
+    
+                <mat-divider></mat-divider>
+            </div>
+        }
+
+        <div class="mt-4">
+            <p><span><strong>Total: </strong></span>{{total | currency: '$ ':'symbol-narrow':'.0-0'}}</p>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="d-flex justify-center items-center mt-4">
+            <button mat-raised-button color="primary" class="custom-btn">Finalizar compra</button>
+        </div>        
+    </mat-menu>
+</mat-toolbar>
+
+<section class="h100-layout d-flex justify-center bc-gray flex-1">
+    <router-outlet />
+</section>

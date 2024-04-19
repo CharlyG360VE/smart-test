@@ -1,0 +1,21 @@
+:root {
+    --grayColor: #868383;
+    --grayColor-2: #d1d1d1;
+    --grayColor-3: #efefef;
+    --fontColor: #474747;
+    --success: #00aa57;
+    --failed: #ff484e;
+    --warning: #ec6e4f;
+}
+
+.gray-color {
+    color: var(--grayColor);
+}
+
+.gray-color-3 {
+    color: var(--grayColor-3);
+}
+
+.bc-gray {
+    background-color: var(--grayColor-3);
+}

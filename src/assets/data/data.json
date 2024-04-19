@@ -1,0 +1,19 @@
+{
+    "aliments": [],
+    "users": [
+        {
+            "firstName": "Eduardo",
+            "lastName": "Botero",
+            "email": "admin@test.com",
+            "password": "123456",
+            "role": "ADMIN"
+        },
+        {
+            "firstName": "Alberto",
+            "lastName": "Mendex",
+            "email": "user@test.com",
+            "password": "654321",
+            "role": "USER"
+        }
+    ]
+}
